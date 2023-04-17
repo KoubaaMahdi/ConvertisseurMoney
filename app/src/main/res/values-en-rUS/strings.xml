@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text1">"Currency Converter "</string>
+    <string name="hint_TND">"Amount in TND "</string>
+    <string name="hint_EUR">"Result in EUR "</string>
+    <string name="hint_USD">Result in USD</string>
+    <string name="hint_GBP">Result in GBP</string>
+    <string name="Button">"Convert "</string>
+    <string name="text2">Convert Listes</string>
+</resources>

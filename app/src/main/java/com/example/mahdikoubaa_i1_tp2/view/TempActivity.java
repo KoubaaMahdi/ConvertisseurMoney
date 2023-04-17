@@ -10,53 +10,51 @@ import android.widget.TextView;
 
 import com.example.mahdikoubaa_i1_tp2.R;
 import com.example.mahdikoubaa_i1_tp2.controller.Controller;
+import com.example.mahdikoubaa_i1_tp2.controller.ControllerTemp;
 
-public class MainActivity extends AppCompatActivity {
-    private EditText txtTND;
-    private Button btnConvert;
-    private TextView lbEUR,lbUSD,lbGBP;
-    Controller controller=Controller.getInsatance();
+public class TempActivity extends AppCompatActivity {
+    private EditText txtC;
+    private Button btnConver;
+    private TextView txtF;
+    ControllerTemp controller=ControllerTemp.getInsatance();
     private void init(){
-        txtTND=(EditText)findViewById(R.id.txtTND);//findViewById retourne un view donc il faut la convertir(cast) en edit text
-        btnConvert=(Button)findViewById(R.id.button_id);//pas utiliser dans cas listener implicite(utiliser pour explicite)
-        lbEUR=(TextView) findViewById(R.id.txtEUR);
-        lbUSD=(TextView) findViewById(R.id.txtUSD);
-        lbGBP=(TextView) findViewById(R.id.txtGBP);
+        txtC=(EditText)findViewById(R.id.txtC);//findViewById retourne un view donc il faut la convertir(cast) en edit text
+        btnConver=(Button)findViewById(R.id.button_Temp);//pas utiliser dans cas listener implicite(utiliser pour explicite)
+        txtF=(TextView) findViewById(R.id.txtF);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_temp);
         init();//liaison entre les instance des java et les composants de xml: alors chaque changement de content va etre envoyer au context et vise versa
-        btnConvert.setOnClickListener(new View.OnClickListener() {
+        btnConver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // call your function here
-                convert();
+                convertir();
             }
         });
     }
-    public void convert()
+    private void convertir()
     {
 
-        Double dinar = null;
+        Double TempC = null;
         try
         {
 //Récupération du texte du montant en TND avec getText()
-            dinar = Double.parseDouble(txtTND.getText().toString());
+            TempC = Double.parseDouble(txtC.getText().toString());
         }
         catch (Exception e){ } // Pour ne pas se planter
 
         //user action + update du model
-        controller.createModel(dinar);
+        controller.createModel(TempC);
 
         /*Double euro, usd, gbp;
         euro = dinar / 3.3360;
         usd = dinar / 3.7830;
         gbp = dinar / 3.1130; pas dans MVC*/
         //Mise à jour des TextView lbEUR, lbUSD, lbGBP
-        lbEUR.setText(Double.toString(controller.getEuro()));
-        lbUSD.setText(Double.toString(controller.getUsd()));
-        lbGBP.setText(Double.toString(controller.getGbp()));// notify view
+        txtF.setText(Double.toString(controller.getNewTemp()));
+
     }
 }

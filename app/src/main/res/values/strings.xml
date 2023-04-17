@@ -2,9 +2,12 @@
     <string name="app_name" translatable="false">Convertiseur Argent</string>
     <string name="text1">Convertisseur de devise</string>
     <string name="text2">Liste de convertisseurs</string>
+    <string name="text3">Convertisseur de Temps</string>
     <string name="hint_TND">Montant en TND</string>
     <string name="hint_EUR">Résultat en EUR</string>
     <string name="hint_USD">Résultat en USD</string>
     <string name="hint_GBP">Résultat en GBP</string>
     <string name="Button">Convertir</string>
+    <string name="hint_C">Temp En C</string>
+    <string name="hint_F">Temp En F</string>
 </resources>

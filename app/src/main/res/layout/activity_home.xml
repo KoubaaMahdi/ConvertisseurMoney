@@ -30,17 +30,30 @@
             android:id="@+id/imgConv"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginRight="20dp"
             android:background="@drawable/img_de"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="10dp"
             />
         <ImageView
             android:id="@+id/imgTemp"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginRight="20dp"
             android:background="@drawable/imgcf"
+            android:layout_marginBottom="10dp"
             />
+        <ImageView
+            android:id="@+id/imgKg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img_kglb"
+            android:layout_marginBottom="10dp"
+            />
+        <ImageView
+            android:id="@+id/imgMi"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img_mi"
+            />
+
 
 
     </LinearLayout>

@@ -7,6 +7,7 @@ public class Model {
         convert();
     }//code de update(constructeur)
     private void convert() {
+        //Formule de conversion
         euro =(double) dinar / 3.3360;
         usd = (double)dinar / 3.7830;
         gbp = (double)dinar / 3.1130;

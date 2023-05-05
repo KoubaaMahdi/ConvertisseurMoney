@@ -18,19 +18,19 @@ public class TempActivity extends AppCompatActivity {
     private TextView txtF;
     ControllerTemp controller=ControllerTemp.getInsatance();
     private void init(){
-        txtC=(EditText)findViewById(R.id.txtC);//findViewById retourne un view donc il faut la convertir(cast) en edit text
-        btnConver=(Button)findViewById(R.id.button_Temp);//pas utiliser dans cas listener implicite(utiliser pour explicite)
-        txtF=(TextView) findViewById(R.id.txtF);
+        txtC=(EditText)findViewById(R.id.txtC);// Récupération de la référence de l'objet EditText dans le layout XML
+        btnConver=(Button)findViewById(R.id.button_Temp);// Récupération de la référence de l'objet Button dans le layout XML
+        txtF=(TextView) findViewById(R.id.txtF);// Récupération de la référence de l'objet TextView dans le layout XML
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temp);
-        init();//liaison entre les instance des java et les composants de xml: alors chaque changement de content va etre envoyer au context et vise versa
+        setContentView(R.layout.activity_temp);//Définition du layout à utiliser pour cette activité
+        init();//Liaison entre les instances de Java et les composants du layout XML
         btnConver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // call your function here
+                // Appel de la méthode de conversion lors du clic sur le bouton
                 convertir();
             }
         });
@@ -41,20 +41,15 @@ public class TempActivity extends AppCompatActivity {
         Double TempC = null;
         try
         {
-//Récupération du texte du montant en TND avec getText()
+            // Récupération du texte de l'EditText txtC et conversion en Double
             TempC = Double.parseDouble(txtC.getText().toString());
         }
-        catch (Exception e){ } // Pour ne pas se planter
+        catch (Exception e){ } // Pour ne pas planter en cas d'erreur
 
-        //user action + update du model
+        // Mise à jour du modèle avec la température en Celsius
         controller.createModel(TempC);
 
-        /*Double euro, usd, gbp;
-        euro = dinar / 3.3360;
-        usd = dinar / 3.7830;
-        gbp = dinar / 3.1130; pas dans MVC*/
-        //Mise à jour des TextView lbEUR, lbUSD, lbGBP
+        // Affichage de la température convertie en Fahrenheit dans le TextView txtF
         txtF.setText(Double.toString(controller.getNewTemp()));
-
     }
 }

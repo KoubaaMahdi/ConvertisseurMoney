@@ -10,4 +10,12 @@
     <string name="Button">Convertir</string>
     <string name="hint_C">Temp En C</string>
     <string name="hint_F">Temp En F</string>
+    <string name="hint_CM">Distance en cm</string>
+    <string name="hint_INCH">Distance En Inch</string>
+    <string name="text4">Convertisseur Des Distances</string>
+    <string name="text5">Convertisseur du poid</string>
+    <string name="hint_KG">Poid en KG</string>
+    <string name="hint_LB">Poid En LB</string>
+    <string name="text6">Conversion dinars euro</string>
+    <string name="btn_return">return</string>
 </resources>

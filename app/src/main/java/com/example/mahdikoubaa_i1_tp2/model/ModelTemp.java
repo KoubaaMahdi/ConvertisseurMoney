@@ -7,6 +7,7 @@ public class ModelTemp {
         convert();
     }//code de update(constructeur)
     private void convert() {
+        //Formule de conversion
         TempF =(double) ((TempC * (9/(float)5)) + 32);
 
     }

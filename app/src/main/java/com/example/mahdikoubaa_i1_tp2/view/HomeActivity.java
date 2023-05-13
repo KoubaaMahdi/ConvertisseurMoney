@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     // Méthode pour naviguer vers une autre activité en passant la classe correspondante en paramètre
     private void navigateToActivity(Class nextActivity){
         Intent intent = new Intent(HomeActivity.this, nextActivity);
-        startActivity(intent);
+        startActivity(intent); 
     }
 
     // Méthode pour mettre en place les écouteurs d'événements pour chaque ImageView
